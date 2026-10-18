@@ -1,13 +1,13 @@
 import Link from "next/link";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Button } from "@/components/ui/button"
-import { Field } from "@/components/ui/field"
-import { Input } from "@/components/ui/input"
+import { Button } from "@/components/ui/button";
+import { Field } from "@/components/ui/field";
+import { Input } from "@/components/ui/input";
 
 const Navbar = () => {
     return (
-        <div className="flex w-full h-20 px-10 items-center bg-green-400 dev-border">
-            <div className="flex w-full items-center justify-between">
+        <div className="flex w-full h-20 px-10 items-center bg-sky-900 dev-border">
+            <div className="flex w-full items-center justify-between text-white">
 
                 <Link
                     href="/"
@@ -16,6 +16,31 @@ const Navbar = () => {
                 </Link>
 
                 <div className="flex items-center gap-4">
+
+                    <Link
+                        href="/blogs"
+                        className="text-base hover:text-gray-300 hover:underline">
+                        Blogs
+                    </Link>
+
+                    <Link
+                        href="/about"
+                        className="text-base hover:text-gray-300 hover:underline">
+                        About
+                    </Link>
+
+
+                    <Link
+                        href="/service"
+                        className="text-base hover:text-gray-300 hover:underline">
+                        Service
+                    </Link>
+
+                    <Link
+                        href="/contact"
+                        className="text-base hover:text-gray-300 hover:underline">
+                        Contact
+                    </Link>
 
                     <Field orientation="horizontal">
                         <Input type="search" placeholder="Search..." />

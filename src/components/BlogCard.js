@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -13,7 +14,7 @@ import {
 const BlogCard = () => {
     return (
         <div className="flex dev-border">
-            <Card className="relative mx-auto w-full max-w-sm pt-0">
+            <Card className="relative mx-auto w-90 h-100 pt-0">
                 <div className="absolute inset-0 z-30 aspect-video bg-black/35" />
                 <img
                     src="https://avatar.vercel.sh/shadcn1"
@@ -31,7 +32,11 @@ const BlogCard = () => {
                     </CardDescription>
                 </CardHeader>
                 <CardFooter>
-                    <Button className="w-full font-bold">Read More</Button>
+                    <Link
+                        href="/blogs/detailss"
+                        className="flex items-center justify-center w-full font-bold hover:underline">
+                        Read More
+                    </Link>
                 </CardFooter>
             </Card>
         </div>
