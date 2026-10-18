@@ -1,7 +1,10 @@
+import BlogCard from "@/components/BlogCard";
+
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center font-sans">
+    <div className="">
       <p>This is home page</p>
+      <BlogCard />
     </div>
   );
 }
