@@ -1,0 +1,52 @@
+export const instant = false;
+// /blogs/[slug]: one post's full article, addressed by its title slug.
+import { getPost, getPosts } from "@/lib/posts";
+import { notFound } from "next/navigation";
+import ReactMarkdown from "react-markdown";
+
+export function generateStaticParams() {
+    return getPosts().map((post) => ({ slug: post.slug }));
+}
+
+const BlogPost = async ({ params }) => {
+    const { slug } = await params;
+    const post = getPost(slug);
+    if (!post || post.status !== "published") notFound();
+
+    return (
+        <article className="mx-auto w-full max-w-3xl px-6 py-10">
+            <img
+                src={post.coverImage}
+                alt={post.title}
+                className="mb-8 aspect-video w-full rounded-xl object-cover"
+            />
+            <p className="text-sm text-muted-foreground">
+                {post.category} · {post.readTime} min read
+            </p>
+            <h1 className="mt-2 text-4xl font-bold">{post.title}</h1>
+            <p className="mt-4 text-sm text-muted-foreground">
+                By {post.author.name} on{" "}
+                {new Date(post.createdAt).toLocaleDateString("en-US", {
+                    dateStyle: "long",
+                })}
+            </p>
+
+            <div className="prose prose-neutral mt-8 max-w-none dark:prose-invert">
+                <ReactMarkdown>{post.content}</ReactMarkdown>
+            </div>
+
+            <ul className="mt-10 flex flex-wrap gap-2">
+                {post.tags.map((tag) => (
+                    <li
+                        key={tag}
+                        className="rounded-full border px-3 py-1 text-xs text-muted-foreground"
+                    >
+                        #{tag}
+                    </li>
+                ))}
+            </ul>
+        </article>
+    );
+};
+
+export default BlogPost;

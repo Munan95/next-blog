@@ -1,0 +1,24 @@
+{
+  "_id": "6710a1f4c2b8e93a1d4f0007",
+  "title": "JWT Authentication in Node.js, Step by Step",
+  "slug": "jwt-authentication-in-nodejs",
+  "excerpt": "Register, log in, and protect routes with signed tokens and a small piece of middleware.",
+  "content": "## The flow\n\nA user logs in with credentials, the server returns a signed token, and the client sends it back on every protected request.\n\n## Hashing passwords\n\nNever store plain text. Hash with `bcrypt` before saving and compare on login.\n\n## Protecting routes\n\nA middleware reads the `Authorization` header, verifies the token with `jwt.verify`, and attaches the user to `req`.\n\n- Keep the secret in an environment variable\n- Set a short expiry on access tokens\n- Return `401` for missing or invalid tokens",
+  "coverImage": "https://picsum.photos/seed/jwt-auth/1200/630",
+  "author": {
+    "name": "Rafiq Ahmed",
+    "avatar": "https://avatar.vercel.sh/rafiq"
+  },
+  "category": "Backend",
+  "tags": [
+    "nodejs",
+    "jwt",
+    "auth",
+    "security"
+  ],
+  "featured": true,
+  "readTime": 9,
+  "status": "published",
+  "createdAt": "2026-10-04T10:20:00.000Z",
+  "updatedAt": "2026-10-05T13:10:00.000Z"
+}

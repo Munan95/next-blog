@@ -1,13 +1,18 @@
 import BlogCard from "@/components/BlogCard";
+import { getPosts } from "@/lib/posts";
 
 const Blogs = () => {
+    const posts = getPosts();
     return (
-        <div className="h-screen flex flex-col justify-center items-center">
-            <p>There have some blogs</p>
-            <div className="flex flex-row justify-center items-center gap-3 w-full">
-                <BlogCard />
-                <BlogCard />
-                <BlogCard />
+        <div className="mx-auto w-full max-w-6xl px-6 py-10">
+            <p className="mb-8 text-3xl font-bold ">Blogs</p>
+            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                {posts.map((post)=>(
+                    <BlogCard 
+                        key={post._id}
+                        post={post}
+                    />
+                ))}
             </div>
         </div>
     );
