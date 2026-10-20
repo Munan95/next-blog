@@ -1,8 +1,18 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  devIndicators:false,
+  devIndicators: false,
   cacheComponents: true,
   partialPrefetching: true,
+
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "picsum.photos",
+      },
+    ],
+  },
+
   turbopack: {
     rules: {
       "*.css": {

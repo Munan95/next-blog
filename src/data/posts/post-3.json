@@ -16,7 +16,7 @@
     "auth",
     "security"
   ],
-  "featured": true,
+  "featured": false,
   "readTime": 9,
   "status": "published",
   "createdAt": "2026-10-04T10:20:00.000Z",
