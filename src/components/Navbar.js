@@ -6,7 +6,7 @@ import { Input } from "@/components/ui/input";
 
 const Navbar = () => {
     return (
-        <div className="flex w-full h-20 px-10 items-center bg-sky-900 dev-border">
+        <div className="flex w-full h-20 px-10 items-center bg-sky-900">
             <div className="flex w-full items-center justify-between text-white">
 
                 <Link

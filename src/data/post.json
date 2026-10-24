@@ -1,0 +1,116 @@
+[
+  {
+    "_id": "6710a1f4c2b8e93a1d4f0005",
+    "title": "Managing State in React with Hooks",
+    "slug": "managing-state-in-react-with-hooks",
+    "excerpt": "Learn when to reach for useState, useReducer, and useContext so your components stay simple and predictable.",
+    "content": "## Start with useState\n\nFor small, local values like a toggle or an input field, `useState` is all you need. Keep state as close as possible to where it is used.\n\n## When to use useReducer\n\nOnce several values change together, a reducer keeps the logic in one place:\n\n- `dispatch({ type: 'add' })` describes what happened\n- The reducer decides how state changes\n- Components stay free of update logic\n\n## Sharing state with context\n\nWrap a subtree in a provider and read the value with `useContext`. Use it for things like themes or the logged-in user, not for rapidly changing data.",
+    "coverImage": "https://picsum.photos/seed/react-hooks/1200/630",
+    "author": {
+      "name": "Nusrat Jahan",
+      "avatar": "https://avatar.vercel.sh/nusrat"
+    },
+    "category": "Frontend",
+    "tags": ["react", "hooks", "state", "javascript"],
+    "featured": false,
+    "readTime": 6,
+    "status": "published",
+    "createdAt": "2026-09-27T09:15:00.000Z",
+    "updatedAt": "2026-09-28T11:30:00.000Z"
+  },
+  {
+    "_id": "6710a1f4c2b8e93a1d4f0006",
+    "title": "Data Fetching in the Next.js App Router",
+    "slug": "data-fetching-in-the-nextjs-app-router",
+    "excerpt": "Server components let you fetch data right where you need it, with caching and revalidation built in.",
+    "content": "## Fetch on the server\n\nIn the App Router, a page can be an `async` function. Call `fetch` directly inside it and render the result, with no `useEffect` needed.\n\n## Caching and revalidation\n\nYou control freshness per request:\n\n- `cache: 'no-store'` always fetches fresh data\n- `next: { revalidate: 60 }` refreshes at most once a minute\n- Static by default when nothing dynamic is used\n\n## Loading and error states\n\nAdd a `loading.js` file for a streaming fallback and an `error.js` file to catch failures in that route segment.",
+    "coverImage": "https://picsum.photos/seed/nextjs-fetch/1200/630",
+    "author": {
+      "name": "Tanvir Hossain",
+      "avatar": "https://avatar.vercel.sh/tanvir"
+    },
+    "category": "Frontend",
+    "tags": ["nextjs", "react", "ssr", "api"],
+    "featured": true,
+    "readTime": 7,
+    "status": "published",
+    "createdAt": "2026-10-01T14:00:00.000Z",
+    "updatedAt": "2026-10-02T08:45:00.000Z"
+  },
+  {
+    "_id": "6710a1f4c2b8e93a1d4f0007",
+    "title": "JWT Authentication in Node.js, Step by Step",
+    "slug": "jwt-authentication-in-nodejs",
+    "excerpt": "Register, log in, and protect routes with signed tokens and a small piece of middleware.",
+    "content": "## The flow\n\nA user logs in with credentials, the server returns a signed token, and the client sends it back on every protected request.\n\n## Hashing passwords\n\nNever store plain text. Hash with `bcrypt` before saving and compare on login.\n\n## Protecting routes\n\nA middleware reads the `Authorization` header, verifies the token with `jwt.verify`, and attaches the user to `req`.\n\n- Keep the secret in an environment variable\n- Set a short expiry on access tokens\n- Return `401` for missing or invalid tokens",
+    "coverImage": "https://picsum.photos/seed/jwt-auth/1200/630",
+    "author": {
+      "name": "Rafiq Ahmed",
+      "avatar": "https://avatar.vercel.sh/rafiq"
+    },
+    "category": "Backend",
+    "tags": ["nodejs", "jwt", "auth", "security"],
+    "featured": true,
+    "readTime": 9,
+    "status": "published",
+    "createdAt": "2026-10-04T10:20:00.000Z",
+    "updatedAt": "2026-10-05T13:10:00.000Z"
+  },
+  {
+    "_id": "6710a1f4c2b8e93a1d4f0008",
+    "title": "Responsive Layouts with Tailwind CSS",
+    "slug": "responsive-layouts-with-tailwind-css",
+    "excerpt": "Build layouts that adapt from phone to desktop using Tailwind's mobile-first breakpoints, flex, and grid.",
+    "content": "## Mobile first\n\nUnprefixed utilities apply to every screen size. Add `md:` or `lg:` prefixes to change things on larger screens.\n\n## Grid in practice\n\nA card list can go from one column to three with a single line:\n\n- `grid grid-cols-1` on small screens\n- `md:grid-cols-2` on tablets\n- `lg:grid-cols-3` on desktops\n\n## Spacing and containers\n\nUse `container mx-auto px-4` to center content and keep comfortable side padding at every size.",
+    "coverImage": "https://picsum.photos/seed/tailwind-responsive/1200/630",
+    "author": {
+      "name": "Sadia Rahman",
+      "avatar": "https://avatar.vercel.sh/sadia"
+    },
+    "category": "Design",
+    "tags": ["tailwindcss", "css", "responsive", "ui"],
+    "featured": false,
+    "readTime": 5,
+    "status": "published",
+    "createdAt": "2026-10-08T07:50:00.000Z",
+    "updatedAt": "2026-10-08T07:50:00.000Z"
+  },
+  {
+    "_id": "6710a1f4c2b8e93a1d4f0009",
+    "title": "Speeding Up MongoDB Queries with Indexes",
+    "slug": "speeding-up-mongodb-queries-with-indexes",
+    "excerpt": "Understand how indexes work, when to add them, and how to confirm a query actually uses one.",
+    "content": "## Why indexes matter\n\nWithout an index, MongoDB scans every document in a collection. An index lets it jump straight to the matches.\n\n## Creating indexes in Mongoose\n\nDeclare them on the schema, for example `postSchema.index({ slug: 1 }, { unique: true })`.\n\n## Check your work\n\nRun `.explain('executionStats')` on a query and look for an `IXSCAN` stage instead of `COLLSCAN`.\n\n- Index fields you filter and sort on\n- Put equality fields before range fields in compound indexes\n- Avoid over-indexing, since every index slows writes",
+    "coverImage": "https://picsum.photos/seed/mongodb-index/1200/630",
+    "author": {
+      "name": "Shadat Hossain",
+      "avatar": "https://avatar.vercel.sh/tanvir"
+    },
+    "category": "Database",
+    "tags": ["mongodb", "mongoose", "performance", "indexing"],
+    "featured": true,
+    "readTime": 8,
+    "status": "published",
+    "createdAt": "2026-10-12T16:30:00.000Z",
+    "updatedAt": "2026-10-13T09:05:00.000Z"
+  },
+  {
+    "_id": "6710a1f4c2b8e93a1d4f000a",
+    "title": "Handling Forms and Validation in React",
+    "slug": "handling-forms-and-validation-in-react",
+    "excerpt": "Build controlled forms, show helpful errors, and validate input before it ever reaches your API.",
+    "content": "## Controlled inputs\n\nStore each field in state and update it in `onChange`. React then stays the single source of truth for what the user typed.\n\n## Validate early\n\nCheck required fields and formats on submit, and show messages next to the field that failed.\n\n- Disable the submit button while the request is pending\n- Clear errors as soon as the user fixes the field\n- Always validate again on the server\n\n## Reduce boilerplate\n\nLibraries like React Hook Form handle state, validation, and errors with far less code.",
+    "coverImage": "https://picsum.photos/seed/react-forms/1200/630",
+    "author": {
+      "name": "Maria Rahman",
+      "avatar": "https://avatar.vercel.sh/nusrat"
+    },
+    "category": "Frontend",
+    "tags": ["react", "forms", "validation", "ux"],
+    "featured": true,
+    "readTime": 6,
+    "status": "published",
+    "createdAt": "2026-10-15T12:00:00.000Z",
+    "updatedAt": "2026-10-16T10:40:00.000Z"
+  }
+]

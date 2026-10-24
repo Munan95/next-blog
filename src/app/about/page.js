@@ -6,7 +6,7 @@ const About = ()=>{
             <p>This is About page</p>
             <Link
                 href="/about/experience"
-                className="text-base hover:underline">
+                className="text-base my-4 p-2 rounded-lg bg-purple-900 hover:bg-purple-950 text-white">
                 Experience
             </Link>
         </div>
