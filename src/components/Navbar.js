@@ -6,12 +6,12 @@ import { Input } from "@/components/ui/input";
 
 const Navbar = () => {
     return (
-        <div className="flex w-full h-20 px-10 items-center bg-sky-900 justify-between text-white">
+        <div className="flex w-full h-20 pl-60 pr-7 items-center bg-sky-900 justify-between text-white">
 
                 <Link
                     href="/"
                     className="font-bold text-2xl">
-                    Next-blog
+                    <img src="/text.gif" width={150} alt="Gif" />
                 </Link>
 
                 <div className="flex items-center gap-5">
