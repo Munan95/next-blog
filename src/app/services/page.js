@@ -7,3 +7,8 @@ const Service = ()=>{
 };
 
 export default Service;
+
+export const metadata = {
+  title: "Services",
+  description: "All Service list is here",
+};

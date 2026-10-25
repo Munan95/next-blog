@@ -7,3 +7,8 @@ const Experience = () => {
 };
 
 export default Experience;
+
+export const metadata = {
+  title: "Experience",
+  description: "Experience of next blog app",
+};

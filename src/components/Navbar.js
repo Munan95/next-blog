@@ -30,9 +30,9 @@ const Navbar = () => {
 
 
                     <Link
-                        href="/service"
+                        href="/services"
                         className="text-base hover:text-gray-300 hover:underline">
-                        Service
+                        Services
                     </Link>
 
                     <Link

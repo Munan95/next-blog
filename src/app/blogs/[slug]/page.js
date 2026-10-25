@@ -8,6 +8,24 @@ export function generateStaticParams() {
     return getPosts().map((post) => ({ slug: post.slug }));
 }
 
+// Generate metadata dynamically for each blog post
+export async function generateMetadata({ params }) {
+    const { slug } = await params;
+    const post = getPost(slug);
+
+    if (!post || post.status !== "published") {
+        return {
+            title: "Blog Not Found",
+            description: "The requested blog post could not be found.",
+        };
+    }
+
+    return {
+        title: post.title,
+        description: post.excerpt || "Full details of blog post",
+    };
+}
+
 const BlogPost = async ({ params }) => {
     const { slug } = await params;
     const post = getPost(slug);

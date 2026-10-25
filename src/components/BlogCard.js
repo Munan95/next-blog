@@ -25,6 +25,7 @@ const BlogCard = ({ post }) => {
       {/* Cover image */}
       <div className="relative aspect-video w-full overflow-hidden">
         <Image
+          loading="eager"
           src={coverImage}
           alt={title}
           fill

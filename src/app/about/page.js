@@ -14,3 +14,8 @@ const About = ()=>{
 };
 
 export default About;
+
+export const metadata = {
+  title: "About",
+  description: "About next blog app",
+};

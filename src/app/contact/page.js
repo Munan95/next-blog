@@ -7,3 +7,8 @@ const Contact = ()=>{
 };
 
 export default Contact;
+
+export const metadata = {
+  title: "Contact",
+  description: "All contact details here",
+};

@@ -9,3 +9,8 @@ const Review = () => {
 };
 
 export default Review;
+
+export const metadata = {
+  title: "Review",
+  description: "All blog post review here",
+};
