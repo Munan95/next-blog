@@ -6,8 +6,7 @@ import { Input } from "@/components/ui/input";
 
 const Navbar = () => {
     return (
-        <div className="flex w-full h-20 px-10 items-center bg-sky-900">
-            <div className="flex w-full items-center justify-between text-white">
+        <div className="flex w-full h-20 px-10 items-center bg-sky-900 justify-between text-white">
 
                 <Link
                     href="/"
@@ -15,7 +14,7 @@ const Navbar = () => {
                     Next-blog
                 </Link>
 
-                <div className="flex items-center gap-4">
+                <div className="flex items-center gap-5">
 
                     <Link
                         href="/blogs"
@@ -42,6 +41,12 @@ const Navbar = () => {
                         Contact
                     </Link>
 
+                    <Link
+                        href="/review"
+                        className="text-base hover:text-gray-300 hover:underline">
+                        Review
+                    </Link>
+
                     <Field orientation="horizontal">
                         <Input type="search" placeholder="Search..." />
                         <Button className="bg-gray-800 hover:bg-gray-900 text-white">Search</Button>
@@ -54,7 +59,6 @@ const Navbar = () => {
                 </div>
 
             </div>
-        </div>
     );
 };
 
