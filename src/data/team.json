@@ -1,0 +1,16 @@
+[
+  {
+    "name": "Munan Khan",
+    "role": "Head of Product · Co-founder",
+    "bio": "Munan has developed ShortPixel's powerful compression API. His job is to calibrate all of our customers' image compression requirements. Self-improver, chef.",
+    "email": "munan@shortpixel.com",
+    "image": "/Munan.jpeg"
+  },
+  {
+    "name": "Maria Ionescu",
+    "role": "Lead Frontend Engineer",
+    "bio": "Maria builds fast, accessible interfaces and keeps our design system tidy. She loves clean components, good typography and a strong cup of coffee.",
+    "email": "maria@shortpixel.com",
+    "image": "/Maria.jpeg"
+  }
+]

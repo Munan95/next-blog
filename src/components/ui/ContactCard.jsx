@@ -40,7 +40,7 @@ export default function ContactCard({
 
   return (
     <div
-      className={`${montserrat.className} mx-auto w-full max-w-[860px] rounded-[28px] border border-sky-200 bg-white p-6 shadow-[0_10px_40px_rgba(32,188,203,0.15)] sm:p-8`}>
+      className={`${montserrat.className} mx-auto w-full max-w-[800] rounded-[28px] border border-sky-100 bg-white p-6 shadow-[0_10px_40px_rgba(32,188,203,0.15)] sm:p-8`}>
 
       {/* Header */}
       <div className="text-center">
