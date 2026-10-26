@@ -32,7 +32,7 @@ const BlogPost = async ({ params }) => {
     if (!post || post.status !== "published") notFound();
 
     return (
-        <article className="mx-auto w-full max-w-3xl px-6 py-10">
+        <article className="mx-auto w-full max-w-3xl px-6 py-10 bg-slate-100/10">
             <img
                 src={post.coverImage}
                 alt={post.title}

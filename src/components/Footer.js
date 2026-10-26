@@ -5,7 +5,7 @@ const Footer = ()=>{
         <div className="flex justify-center items-center gap-160 h-20 w-full bg-sky-800 py-4 text-white text-sm">
             
             <div>
-                <p>Copyright &copy; NextBlog - All rights reserved!</p>
+                <p><span>Copyright &copy; </span><span className="text-rose-500">Next</span><span>Blog - All rights reserved!</span></p>
             </div>
 
             <div className="flex gap-3">

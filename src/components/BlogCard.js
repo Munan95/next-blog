@@ -21,7 +21,7 @@ const BlogCard = ({ post }) => {
   } = post;
 
   return (
-    <Card className="group flex h-full flex-col gap-0 overflow-hidden border border-slate-200 bg-white py-0 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-slate-300 hover:shadow-xl">
+    <Card className="group flex h-full flex-col gap-0 overflow-hidden border border-sky-200 bg-white py-0 transition-all duration-300 shadow-[0_10px_40px_rgba(12, 98, 158, 0.91)] hover:-translate-y-1 hover:border-sky-300 hover:shadow-xl">
       {/* Cover image */}
       <div className="relative aspect-video w-full overflow-hidden">
         <Image
@@ -63,7 +63,7 @@ const BlogCard = ({ post }) => {
       </CardHeader>
 
       {/* Read more link */}
-      <CardFooter className="mt-auto border-t border-slate-100 p-5 sm:px-6">
+      <CardFooter className="mt-auto border-t border-sky-100 p-5 sm:px-6">
         <Link
           href={`/blogs/${slug}`}
           className="inline-flex items-center gap-2 font-semibold text-slate-800 transition-colors hover:text-slate-500 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-slate-700"

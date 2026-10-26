@@ -3,6 +3,13 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { Field } from "@/components/ui/field";
 import { Input } from "@/components/ui/input";
+import { Roboto } from "next/font/google";
+
+const roboto = Roboto({
+  subsets: ["latin"],
+  weight: ["400", "700"],
+  style: ["normal", "italic"],
+});
 
 const Navbar = () => {
     return (
@@ -10,8 +17,8 @@ const Navbar = () => {
 
                 <Link
                     href="/"
-                    className="font-bold text-2xl">
-                    <img src="/text.gif" width={150} alt="Gif" />
+                    className={`${roboto.className} italic font-bold`}>
+                    <p><span className="text-rose-700 text-4xl">Next</span><span className="text-3xl">Blog</span><span>.com</span></p>
                 </Link>
 
                 <div className="flex items-center gap-5">

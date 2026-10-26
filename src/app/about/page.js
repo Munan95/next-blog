@@ -2,7 +2,7 @@ import Link from "next/link";
 
 const About = ()=>{
     return(
-        <div className="flex flex-col items-center justify-center h-screen w-full">
+        <div className="flex flex-col items-center justify-center h-screen w-full bg-rose-100/10">
             <p>This is About page</p>
             <Link
                 href="/about/experience"

@@ -1,6 +1,6 @@
 const Experience = () => {
     return (
-        <div className="flex items-center justify-center h-screen w-full">
+        <div className="flex items-center justify-center h-screen w-full bg-rose-100/10">
             <p>This is Experience page</p>
         </div>
     );
