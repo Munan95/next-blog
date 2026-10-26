@@ -26,5 +26,5 @@
     "eslint-config-next": "16.4.1",
     "tailwindcss": "^4"
   },
-  "packageManager": "pnpm@12.14.0"
+  "packageManager": "pnpm@12.15.0"
 }
