@@ -4,16 +4,21 @@ import { getPosts } from "@/lib/posts";
 const Blogs = () => {
     const posts = getPosts();
     return (
-        <div className="mx-auto w-full max-w-6xl px-6 py-10 bg-rose-100/10">
-            <p className="mb-8 text-3xl font-bold ">Blogs</p>
+        <div className="min-h-screen w-full bg-rose-100/10">
 
-            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-                {posts.map((post)=>(
-                    <BlogCard 
-                        key={post._id}
-                        post={post}
-                    />
-                ))}
+            <div className="mx-auto w-full max-w-6xl px-6 py-10">
+
+                <p className="mb-8 text-3xl font-bold ">Blogs</p>
+
+                <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                    {posts.map((post) => (
+                        <BlogCard
+                            key={post._id}
+                            post={post}
+                        />
+                    ))}
+                </div>
+
             </div>
 
         </div>
