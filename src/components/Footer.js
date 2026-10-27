@@ -41,7 +41,7 @@ const Footer = ()=>{
                 </Link>
             </div>
             
-            <div className="flex justify-center items-center gap-200 bg-sky-800 pt-4 pb-1 text-white text-sm">
+            <div className="flex justify-center items-center gap-220 bg-sky-800 pt-4 pb-1 text-white text-sm">
                 <div className="flex flex-row justify-center items-center gap-3">
                     
                     <Link
@@ -51,7 +51,7 @@ const Footer = ()=>{
                         aria-label="Facebook"
                         className=""
                     >
-                        <FacebookIcon className="h-4 w-4 text-slate-950" />
+                        <FacebookIcon className="h-4 w-4 text-white" />
                     </Link>
                     
                     <Link
@@ -61,7 +61,7 @@ const Footer = ()=>{
                         aria-label="X (Twitter)"
                         className=""
                     >
-                        <TwitterIcon className="h-4 w-4 text-slate-950" />
+                        <TwitterIcon className="h-4 w-4 text-white" />
                     </Link>
 
                     <Link
@@ -71,7 +71,7 @@ const Footer = ()=>{
                         aria-label="Github"
                         className=""
                     >
-                        <GithubIcon className="h-4 w-4 text-slate-950" />
+                        <GithubIcon className="h-4 w-4 text-white" />
                     </Link>
 
                     <Link
@@ -81,7 +81,7 @@ const Footer = ()=>{
                         aria-label="Linkedin"
                         className=""
                     >
-                        <LinkedinIcon className="h-4 w-4 text-slate-950" />
+                        <LinkedinIcon className="h-4 w-4 text-white" />
                     </Link>
                     
                 </div>
