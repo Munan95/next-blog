@@ -6,7 +6,7 @@ const Blogs = () => {
     return (
         <div className="min-h-screen w-full bg-rose-100/10">
 
-            <div className="mx-auto w-full max-w-6xl px-6 py-10">
+            <div className="mx-auto w-full max-w-6xl px-6 pt-20 pb-15">
 
                 <p className="mb-8 text-3xl font-bold ">Blogs</p>
 

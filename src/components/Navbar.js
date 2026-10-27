@@ -24,6 +24,12 @@ const Navbar = () => {
                 <div className="flex items-center gap-5">
 
                     <Link
+                        href="/"
+                        className="text-base hover:text-gray-300 hover:underline">
+                        Home
+                    </Link>
+
+                    <Link
                         href="/blogs"
                         className="text-base hover:text-gray-300 hover:underline">
                         Blogs
