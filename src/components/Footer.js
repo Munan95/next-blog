@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { FacebookIcon } from "./ui/SocialIcons";
+import { InstagramIcon } from "./ui/SocialIcons"; 
 import { TwitterIcon } from "./ui/SocialIcons";
 import { GithubIcon } from "./ui/SocialIcons";
 import { LinkedinIcon } from "./ui/SocialIcons";
@@ -45,17 +45,17 @@ const Footer = ()=>{
                 <div className="flex flex-row justify-center items-center gap-3">
                     
                     <Link
-                        href="https://facebook.com"
+                        href="https://www.instagram.com/munan_khan69?vrfl=aTg5dnlvemc1c2dv"
                         target="_blank"
                         rel="noopener noreferrer"
-                        aria-label="Facebook"
+                        aria-label="Instagram"
                         className=""
                     >
-                        <FacebookIcon className="h-4 w-4 text-white" />
+                        <InstagramIcon className="h-4 w-4 text-white" />
                     </Link>
                     
                     <Link
-                        href="https://x.com"
+                        href="https://x.com/Munan_Khan69"
                         target="_blank"
                         rel="noopener noreferrer"
                         aria-label="X (Twitter)"
@@ -111,7 +111,7 @@ const Footer = ()=>{
 
             <div className="bg-white/40 rounded-full h-px mx-72 my-1"></div>
 
-            <div className="flex justify-center items-center pt-1"><p><span>&copy; 2014-2026 </span><span className="text-rose-500">Next</span><span>blog · Made with </span><span className="text-rose-500 text-base"> ♥ </span><span> in Jhalokati, Bangladesh.</span></p></div>
+            <div className="flex justify-center items-center pt-1"><p><span>&copy; 2026 </span><span className="text-rose-500">Next</span><span>blog · Made with </span><span className="text-rose-500 text-base"> ♥ </span><span> in Jhalokati, Bangladesh.</span></p></div>
 
             <div className="flex justify-center items-center">
                 <p><span className="text-rose-500">Next</span><span>Blog® - All rights reserved!</span></p>

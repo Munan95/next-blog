@@ -8,7 +8,7 @@ const Articles = () => {
 
             <div className="flex flex-col justify-center items-center m-18 text-slate-800">
               
-              <p className="bg-slate-50 p-2 rounded-2xl">Blog</p>
+              <p className="bg-slate-100 p-2 rounded-2xl">Blog</p>
 
               <p className="font-bold text-4xl m-4">Discover our latest news</p>
 
