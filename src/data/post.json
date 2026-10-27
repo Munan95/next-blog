@@ -31,7 +31,7 @@
     },
     "category": "Frontend",
     "tags": ["nextjs", "react", "ssr", "api"],
-    "featured": true,
+    "featured": false,
     "readTime": 7,
     "status": "published",
     "createdAt": "2026-10-01T14:00:00.000Z",
@@ -50,7 +50,7 @@
     },
     "category": "Backend",
     "tags": ["nodejs", "jwt", "auth", "security"],
-    "featured": true,
+    "featured": false,
     "readTime": 9,
     "status": "published",
     "createdAt": "2026-10-04T10:20:00.000Z",
@@ -80,7 +80,7 @@
     "title": "Speeding Up MongoDB Queries with Indexes",
     "slug": "speeding-up-mongodb-queries-with-indexes",
     "excerpt": "Understand how indexes work, when to add them, and how to confirm a query actually uses one.",
-    "content": "## Why indexes matter\n\nWithout an index, MongoDB scans every document in a collection. An index lets it jump straight to the matches.\n\n## Creating indexes in Mongoose\n\nDeclare them on the schema, for example `postSchema.index({ slug: 1 }, { unique: true })`.\n\n## Check your work\n\nRun `.explain('executionStats')` on a query and look for an `IXSCAN` stage instead of `COLLSCAN`.\n\n- Index fields you filter and sort on\n- Put equality fields before range fields in compound indexes\n- Avoid over-indexing, since every index slows writes",
+    "content": "## Why indexes matter\n\nWithout an index, MongoDB scans every document in a collection. An index lets it jump straight to the matches.\n\n## Creating indexes in Mongoose\n\nDeclare them on the schema, for example `postSchema.index({ slug: 1 }, { unique: false })`.\n\n## Check your work\n\nRun `.explain('executionStats')` on a query and look for an `IXSCAN` stage instead of `COLLSCAN`.\n\n- Index fields you filter and sort on\n- Put equality fields before range fields in compound indexes\n- Avoid over-indexing, since every index slows writes",
     "coverImage": "https://picsum.photos/seed/mongodb-index/1200/630",
     "author": {
       "name": "Shadat Hossain",
@@ -88,7 +88,7 @@
     },
     "category": "Database",
     "tags": ["mongodb", "mongoose", "performance", "indexing"],
-    "featured": true,
+    "featured": false,
     "readTime": 8,
     "status": "published",
     "createdAt": "2026-10-12T16:30:00.000Z",
@@ -107,7 +107,7 @@
     },
     "category": "Frontend",
     "tags": ["react", "forms", "validation", "ux"],
-    "featured": true,
+    "featured": false,
     "readTime": 6,
     "status": "published",
     "createdAt": "2026-10-15T12:00:00.000Z",
@@ -115,10 +115,10 @@
   },
   {
     "_id": "6710a1f4c2b8e93a1d4f000b",
-    "title": "Amazon’s Fulfillment Net Widens",
+    "title": "Amazon's Fulfillment Net Widens",
     "slug": "amazons-fulfillment-net-widens",
-    "excerpt": "Amazon’s Multi-Channel Fulfillment now supports Walmart Marketplace and Shopify, with SHEIN coming by year-end.",
-    "content": "Amazon has just taken a big step in expanding its logistics reach. At its recent Accelerate seller conference, the company announced that its Multi-Channel Fulfillment (MCF) service will now support merchants on Walmart Marketplace and is rolling out integration for Shopify, with SHEIN slated for year-end.\n\nThis move builds on Amazon’s previous MCF integrations, which already handle orders from platforms such as eBay, Etsy, Temu, and TikTok Shop. Now, sellers who list products on these new channels can use Amazon’s warehouses to pick, pack, and ship those orders, even when the sale happens outside of Amazon.com.\n\nOne of the key perks here is inventory consolidation. Instead of managing separate stock for each sales channel, sellers can maintain a single, shared inventory pool under Amazon’s fulfillment umbrella, meaning fewer stock issues and quicker restocking. Amazon notes that merchants using MCF on their Amazon store report about a 19% increase in sales, along with reduced out-of-stock incidents and improved inventory turnover.\n\nFor Walmart Marketplace sellers, the process is relatively straightforward. Merchants can route orders into Amazon’s fulfillment system through Amazon Seller Central or by using integration partners, such as WebBee, Pipe17, and others. The packaging will be unbranded when it’s shipped, so the end customer may not always see Amazon’s involvement.\n\nShopify merchants can link their Shopify accounts with Amazon’s and have orders from Shopify routed to Amazon for fulfillment. SHEIN sellers will have a dedicated Amazon MCF for the SHEIN app by year-end, which will simplify the fulfillment of SHEIN orders via Amazon’s system. Beyond logistics for sellers, Amazon is also unveiling improvements to its supply chain services more generally. It’s introducing a Global Warehousing and Distribution service to help sellers store goods in bulk closer to manufacturing sites, reducing shipping time to key markets. It’s also working to improve customs processing via tech (including AI) to reduce paperwork delays. All of this is meant to make its fulfillment services more competitive and more attractive to small and medium-sized businesses.\n\nOf course, there are trade-offs and complexities to consider as sellers will need to weigh service costs against margins. Reliance on Amazon’s warehouse network may result in reduced control over certain customer-facing logistics, packaging, or branding. There are also potential regulatory concerns: Amazon acting as a logistics backbone even for platforms that are nominally its competitors might attract scrutiny over market dominance or conflicts of interest.\n\nStill, for many merchants, especially smaller operations, this expansion represents a big opportunity. Having Amazon handle fulfillment across multiple sales channels can simplify operations (fewer fulfillment partners to manage), speed up delivery, and improve reliability, factors that often weigh heavily with customers. Sellers report that combining FBA with off-Amazon channels via MCF tends to make inventory management more efficient and reduce the overhead associated with juggling different systems.\n\nAmazon’s extension of Multi-Channel Fulfillment to now include Walmart, Shopify, and soon SHEIN is more than just another service enhancement. It’s a signal of Amazon doubling down on being the logistics infrastructure for a broader slice of e-commerce. If merchants can make the economics work and if regulatory oversight remains balanced, this could reshape how third-party sellers approach inventory, fulfillment, and platform strategy in the coming years. What was once an option is becoming a backbone.",
+    "excerpt": "Amazon's Multi-Channel Fulfillment now supports Walmart Marketplace and Shopify, with SHEIN coming by year-end.",
+    "content": "Amazon has just taken a big step in expanding its logistics reach. At its recent Accelerate seller conference, the company announced that its Multi-Channel Fulfillment (MCF) service will now support merchants on Walmart Marketplace and is rolling out integration for Shopify, with SHEIN slated for year-end.\n\nThis move builds on Amazon’s previous MCF integrations, which already handle orders from platforms such as eBay, Etsy, Temu, and TikTok Shop. Now, sellers who list products on these new channels can use Amazon's warehouses to pick, pack, and ship those orders, even when the sale happens outside of Amazon.com.\n\nOne of the key perks here is inventory consolidation. Instead of managing separate stock for each sales channel, sellers can maintain a single, shared inventory pool under Amazon’s fulfillment umbrella, meaning fewer stock issues and quicker restocking. Amazon notes that merchants using MCF on their Amazon store report about a 19% increase in sales, along with reduced out-of-stock incidents and improved inventory turnover.\n\nFor Walmart Marketplace sellers, the process is relatively straightforward. Merchants can route orders into Amazon’s fulfillment system through Amazon Seller Central or by using integration partners, such as WebBee, Pipe17, and others. The packaging will be unbranded when it’s shipped, so the end customer may not always see Amazon’s involvement.\n\nShopify merchants can link their Shopify accounts with Amazon’s and have orders from Shopify routed to Amazon for fulfillment. SHEIN sellers will have a dedicated Amazon MCF for the SHEIN app by year-end, which will simplify the fulfillment of SHEIN orders via Amazon’s system. Beyond logistics for sellers, Amazon is also unveiling improvements to its supply chain services more generally. It’s introducing a Global Warehousing and Distribution service to help sellers store goods in bulk closer to manufacturing sites, reducing shipping time to key markets. It’s also working to improve customs processing via tech (including AI) to reduce paperwork delays. All of this is meant to make its fulfillment services more competitive and more attractive to small and medium-sized businesses.\n\nOf course, there are trade-offs and complexities to consider as sellers will need to weigh service costs against margins. Reliance on Amazon’s warehouse network may result in reduced control over certain customer-facing logistics, packaging, or branding. There are also potential regulatory concerns: Amazon acting as a logistics backbone even for platforms that are nominally its competitors might attract scrutiny over market dominance or conflicts of interest.\n\nStill, for many merchants, especially smaller operations, this expansion represents a big opportunity. Having Amazon handle fulfillment across multiple sales channels can simplify operations (fewer fulfillment partners to manage), speed up delivery, and improve reliability, factors that often weigh heavily with customers. Sellers report that combining FBA with off-Amazon channels via MCF tends to make inventory management more efficient and reduce the overhead associated with juggling different systems.\n\nAmazon’s extension of Multi-Channel Fulfillment to now include Walmart, Shopify, and soon SHEIN is more than just another service enhancement. It’s a signal of Amazon doubling down on being the logistics infrastructure for a broader slice of e-commerce. If merchants can make the economics work and if regulatory oversight remains balanced, this could reshape how third-party sellers approach inventory, fulfillment, and platform strategy in the coming years. What was once an option is becoming a backbone.",
     "coverImage": "https://picsum.photos/seed/amazon-fulfillment/1200/630",
     "author": {
       "name": "Sadia Rahman",
@@ -131,7 +131,7 @@
       "logistics",
       "fulfillment"
     ],
-    "featured": true,
+    "featured": false,
     "readTime": 3,
     "status": "published",
     "createdAt": "2026-10-16T09:00:00.000Z",
@@ -213,11 +213,11 @@
     "_id": "6710a1f4c2b8e93a1d4f000f",
     "title": "The Quran: A Historical and Linguistic Overview",
     "slug": "the-quran-a-historical-and-linguistic-overview",
-    "excerpt": "A look at the Quran’s compilation, its place in Classical Arabic, and what early manuscripts reveal to historians.",
+    "excerpt": "A look at the Quran's compilation, its place in Classical Arabic, and what early manuscripts reveal to historians.",
     "content": "The word Quran literally translates from Arabic as \"the recitation.\" From a historical and linguistic perspective, it refers to the body of oral utterances delivered by Muhammad in Arabia during the early 7th century. Scholars of history categorize the text as a primary source for understanding the social and linguistic landscape of the Hejaz region during this period, marking the transition from pre-Islamic oral traditions to a written administrative and legal culture.\n\nHistorically, the compilation of the Quran into a single written volume (the mushaf) occurred in stages following Muhammad's death in 632 CE. While oral transmission was the primary method of preservation initially, the first formal collection was initiated under the first caliph, Abu Bakr. However, the standardized version used today was established during the reign of the third caliph, Uthman ibn Affan, around 650 CE. This project aimed to resolve dialectal variations and ensure a uniform text across the expanding empire.\n\nLinguistically, the Quran is the preeminent example of Classical Arabic. It occupies a unique space between rhymed prose (saj') and traditional poetry, utilizing a complex system of roots and patterns that expanded the Arabic vocabulary. For centuries, it has served as the fundamental grammar and syntax reference for the Arabic language, influencing the development of linguistic sciences and literary styles throughout the Middle East and North Africa.\n\nThe text is organized into 114 chapters known as surahs, which are further divided into verses called ayat. These chapters are generally arranged by length—from the longest to the shortest—rather than by the chronological order in which they were spoken. This structural choice has led to extensive academic study regarding the \"intertextuality\" of the book, as themes and historical references are woven throughout the volume rather than following a linear narrative.\n\nFrom an archaeological and manuscript perspective, the study of early Quranic fragments, such as the Birmingham Manuscript and the Sana'a Palimpsest, provides insight into the evolution of Arabic orthography. These findings assist historians in dating the text and understanding how early scribes utilized diacritical marks to preserve the phonetic accuracy of the oral recitation. Today, the Quran remains one of the most widely printed and studied books in human history.",
     "coverImage": "https://picsum.photos/seed/quran-history/1200/630",
     "author": {
-      "name": "Mitchell Booth",
+      "name": "Rafiq Ahmed",
       "avatar": "https://avatar.vercel.sh/mitchell"
     },
     "category": "History",
@@ -227,11 +227,11 @@
       "arabic",
       "manuscripts"
     ],
-    "featured": true,
+    "featured": false,
     "readTime": 2,
     "status": "published",
-    "createdAt": "2026-02-22T10:00:00.000Z",
-    "updatedAt": "2026-02-22T10:00:00.000Z"
+    "createdAt": "2026-10-24T10:00:00.000Z",
+    "updatedAt": "2026-10-25T10:00:00.000Z"
   },
   {
     "_id": "6710a1f4c2b8e93a1d4f0010",
@@ -241,7 +241,7 @@
     "content": "Snap-on Incorporated stands as a titan in the world of professional tools and equipment, a name synonymous with unwavering quality, precision engineering, and groundbreaking innovation. For over a century, the company has been equipping technicians, mechanics, and industrial professionals with the instruments they need to tackle the most demanding jobs. From hand tools to diagnostic equipment, Snap-on's extensive product line is designed to meet the rigorous standards of various industries, making it a trusted partner for those who depend on their tools daily.\n\nThe origins of Snap-on date back to 1920 when its founders pioneered the concept of interchangeable sockets and wrench handles. This revolutionary idea not only saved technicians time and effort but also reduced the number of tools they needed to carry. This early commitment to efficiency and user-centric design laid the groundwork for Snap-on's enduring philosophy: to create tools that make work easier, safer, and more productive. This core principle continues to drive their research and development, resulting in products that consistently set industry benchmarks.\n\nWhat truly sets Snap-on apart is its unwavering dedication to quality. Each tool is crafted from high-grade materials, engineered for exceptional durability and tested rigorously to withstand the harshest working conditions. This commitment extends beyond the physical product to the entire user experience. Snap-on's direct sales model, often through mobile franchisees, provides personalized service and expert advice, ensuring that customers receive not only the best tools but also the support they need to maximize their investment.\n\nBeyond its legendary hand tools, Snap-on has expanded its portfolio to include a comprehensive range of diagnostic equipment, power tools, tool storage solutions, and shop equipment. Their diagnostic tools are at the forefront of automotive technology, helping technicians troubleshoot complex vehicle systems with unparalleled accuracy. This continuous evolution and diversification demonstrate Snap-on's foresight and adaptability in a rapidly changing technological landscape.\n\nSnap-on is not just a tool manufacturer; it's an institution that fosters a culture of excellence and continuous improvement. The brand represents a commitment to craftsmanship, reliability, and the pursuit of perfection in every product. For generations, professionals have relied on Snap-on to deliver the performance they need, solidifying its reputation as a leader and innovator in the global tool market. The legacy of Snap-on is built on trust, quality, and a profound understanding of the demands placed on the skilled trades.",
     "coverImage": "https://picsum.photos/seed/snap-on-tools/1200/630",
     "author": {
-      "name": "Rafiq Ahmed",
+      "name": "Mitchell Booth",
       "avatar": "https://avatar.vercel.sh/rafiq"
     },
     "category": "Industry",
@@ -278,7 +278,7 @@
     "featured": false,
     "readTime": 2,
     "status": "published",
-    "createdAt": "2026-10-22T12:10:00.000Z",
-    "updatedAt": "2026-10-23T09:30:00.000Z"
+    "createdAt": "2026-02-22T12:10:00.000Z",
+    "updatedAt": "2026-02-23T09:30:00.000Z"
   }
 ]
