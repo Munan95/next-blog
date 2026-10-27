@@ -3,6 +3,7 @@ import { InstagramIcon } from "./ui/SocialIcons";
 import { TwitterIcon } from "./ui/SocialIcons";
 import { GithubIcon } from "./ui/SocialIcons";
 import { LinkedinIcon } from "./ui/SocialIcons";
+import { instagram,x,github,linkedin } from "@/data/socialmedia.json";
 
 const Footer = ()=>{
     return(
@@ -45,7 +46,7 @@ const Footer = ()=>{
                 <div className="flex flex-row justify-center items-center gap-3">
                     
                     <Link
-                        href="https://www.instagram.com/munan_khan69?vrfl=aTg5dnlvemc1c2dv"
+                        href={instagram}
                         target="_blank"
                         rel="noopener noreferrer"
                         aria-label="Instagram"
@@ -55,7 +56,7 @@ const Footer = ()=>{
                     </Link>
                     
                     <Link
-                        href="https://x.com/Munan_Khan69"
+                        href={x}
                         target="_blank"
                         rel="noopener noreferrer"
                         aria-label="X (Twitter)"
@@ -65,7 +66,7 @@ const Footer = ()=>{
                     </Link>
 
                     <Link
-                        href="https://github.com/Munan95"
+                        href={github}
                         target="_blank"
                         rel="noopener noreferrer"
                         aria-label="Github"
@@ -75,7 +76,7 @@ const Footer = ()=>{
                     </Link>
 
                     <Link
-                        href="https://www.linkedin.com/in/md-morshed-khan-munan-1390863b0/"
+                        href={linkedin}
                         target="_blank"
                         rel="noopener noreferrer"
                         aria-label="Linkedin"
