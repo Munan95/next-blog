@@ -2,15 +2,15 @@
   {
     "name": "Munan Khan",
     "role": "Head of Product · Co-founder",
-    "bio": "Munan has developed ShortPixel's powerful compression API. His job is to calibrate all of our customers' image compression requirements. Self-improver, chef.",
+    "bio": "Munan has developed NextBlog's post management API. His job is to manage all of our user's blog and check authenticity and published. Self-improver, chef.",
     "email": "munan@shortpixel.com",
     "image": "/Munan.jpeg"
   },
   {
-    "name": "Maria Ionescu",
+    "name": "Özge Törer",
     "role": "Lead Frontend Engineer",
-    "bio": "Maria builds fast, accessible interfaces and keeps our design system tidy. She loves clean components, good typography and a strong cup of coffee.",
-    "email": "maria@shortpixel.com",
-    "image": "/Maria.jpeg"
+    "bio": "Özge builds fast, accessible interfaces and keeps our design system tidy. She loves clean components, good typography and a strong cup of coffee.",
+    "email": "ozge@shortpixel.com",
+    "image": "/Özge.jpeg"
   }
 ]
