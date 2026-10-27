@@ -1,19 +1,19 @@
-import BlogCard from "@/components/BlogCard";
-import { getPosts } from "@/lib/posts";
+import ArticleCard from "@/components/ArticleCard";
+import { getArticles } from "@/lib/article";
 
-const Blogs = () => {
-    const posts = getPosts();
+const Articles = () => {
+    const articles = getArticles();
     return (
         <div className="min-h-screen w-full bg-rose-100/10">
 
             <div className="flex flex-col justify-center items-center m-18 text-slate-800">
               
-              <p className="text-bold bg-slate-50 p-2 rounded-2xl">Blog</p>
+              <p className="bg-slate-50 p-2 rounded-2xl">Blog</p>
 
               <p className="font-bold text-4xl m-4">Discover our latest news</p>
 
-              <p className="">Discover the achievments that set us apart.From groundbreaking projects to industry accolades,we take pride in our accomplisments,</p>
-              <p className="">we take pride in our accomplisments.</p>
+              <p className="text-base">Discover the achievments that set us apart.From groundbreaking projects to industry accolades,we take pride in our accomplisments,</p>
+              <p className="text-base">we take pride in our accomplisments.</p>
             
             </div>
 
@@ -22,10 +22,10 @@ const Blogs = () => {
                 <p className="mb-8 text-3xl font-bold ">EDITOR'S PICKS</p>
 
                 <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-                    {posts.map((post) => (
-                        <BlogCard
-                            key={post._id}
-                            post={post}
+                    {articles.map((article) => (
+                        <ArticleCard
+                            key={article._id}
+                            article={article}
                         />
                     ))}
                 </div>
@@ -36,4 +36,4 @@ const Blogs = () => {
     );
 };
 
-export default Blogs;
+export default Articles;
