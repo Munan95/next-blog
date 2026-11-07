@@ -1,8 +1,22 @@
+export const instant = false;
+import { MongoClient } from "mongodb";
 import BlogCard from "@/components/BlogCard";
-import { getPosts } from "@/lib/posts";
 
-const Blogs = () => {
-    const posts = getPosts();
+const db_uri = process.env.MONGODB_URI;
+if(!db_uri){
+    throw new error("MongoDb uri is not define int the environment variables");
+}
+
+const db_call = new MongoClient(db_uri);
+
+async function BlogList() {
+    const posts = await db_call
+        .db("blog")
+        .collection("post")
+        .find({ })
+        .sort({ createdAt:-1 })
+        .toArray();
+
     return (
         <div className="min-h-screen w-full bg-rose-100/10">
 
@@ -21,6 +35,13 @@ const Blogs = () => {
 
             </div>
 
+        </div>
+    );
+};
+const Blogs = () => {
+    return (
+        <div>
+            <BlogList />
         </div>
     );
 };
