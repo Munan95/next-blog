@@ -20,3 +20,12 @@ export const getPost = cache(async (id) => {
     const post = await posts().findOne({ _id: new ObjectId(id) });
     return post?.status === "published" ? post : null;
 });
+
+export const getLatestPosts = cache(async (limit) => {
+    await connection();
+    return posts()
+        .find({ status: "published" })
+        .sort({ createdAt: -1 })
+        .limit(limit)
+        .toArray();
+});

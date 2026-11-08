@@ -1,15 +1,9 @@
 import { Suspense } from "react";
-import client from "@/lib/mongodb";
 import ArticleCard from "@/components/ArticleCard";
+import { getLatestPosts } from "@/lib/posts";
 
 async function ArticleList() {
-    const articles = await client
-        .db("blog")
-        .collection("post")
-        .find({ })
-        .sort({ createdAt:-1 })
-        .limit(6)
-        .toArray();
+    const articles = await getLatestPosts(6);
 
     return (
         <div className="min-h-screen w-full bg-rose-100/10">
