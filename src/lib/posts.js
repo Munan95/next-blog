@@ -1,13 +1,15 @@
-import posts from "@/data/post.json";
+import { cache } from "react";
+import { ObjectId } from "mongodb";
+import client from "./mongodb";
 
-/** All published posts, newest first. */
-export function getPosts() {
-    return posts
-        .filter((post) => post.status === "published")
-        .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
-}
+const posts = () => client.db("blog").collection("post");
 
-/** One published post by slug, or undefined. */
-export function getPost(slug) {
-    return getPosts().find((post) => post.slug === slug);
-}
+export const getPublishedPosts = cache(() =>
+  posts().find({ status: "published" }).sort({ createdAt: -1 }).toArray()
+);
+
+export const getPost = cache(async (id) => {
+  if (!ObjectId.isValid(id)) return null;
+  const post = await posts().findOne({ _id: new ObjectId(id) });
+  return post?.status === "published" ? post : null;
+});
