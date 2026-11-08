@@ -11,8 +11,8 @@ import {
 
 const ArticleCard = ({ article }) => {
   const {
+    _id,
     title,
-    slug,
     excerpt,
     coverImage,
     category,
@@ -65,7 +65,7 @@ const ArticleCard = ({ article }) => {
       {/* Read more link */}
       <CardFooter className="mt-auto border-t border-sky-100 p-5 sm:px-6">
         <Link
-          href={`/blogs/${slug}`}
+          href={`/blogs/${_id}`}
           className="inline-flex items-center gap-2 font-semibold text-slate-800 transition-colors hover:text-slate-500 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-slate-700"
         >
           Read More
