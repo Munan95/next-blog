@@ -1,21 +1,9 @@
-export const instant = false;
-import { MongoClient } from "mongodb";
+import { Suspense } from "react";
 import BlogCard from "@/components/BlogCard";
-
-const db_uri = process.env.MONGODB_URI;
-if(!db_uri){
-    throw new error("MongoDb uri is not define int the environment variables");
-}
-
-const db_call = new MongoClient(db_uri);
+import { getPublishedPosts } from "@/lib/posts";
 
 async function BlogList() {
-    const posts = await db_call
-        .db("blog")
-        .collection("post")
-        .find({ })
-        .sort({ createdAt:-1 })
-        .toArray();
+    const posts = await getPublishedPosts();
 
     return (
         <div className="min-h-screen w-full bg-rose-100/10">
@@ -38,11 +26,12 @@ async function BlogList() {
         </div>
     );
 };
+
 const Blogs = () => {
     return (
-        <div>
+        <Suspense fallback={<p>Loading posts…</p>}>
             <BlogList />
-        </div>
+        </Suspense>
     );
 };
 

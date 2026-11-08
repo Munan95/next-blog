@@ -1,27 +1,13 @@
-export const instant = false;
-import { MongoClient, ObjectId } from "mongodb";
-import { connection } from "next/server";
+import { Suspense } from "react";
 import { notFound } from "next/navigation";
 import ReactMarkdown from "react-markdown";
+import { getPost } from "@/lib/posts";
 
-const db_uri = process.env.MONGODB_URI;
-if(!db_uri){
-    throw new error("MongoDb uri is not define int the environment variables");
-}
-
-// Generate metadata dynamically for each blog post
 export async function generateMetadata({ params }) {
     const { slug } = await params;
-    const db_call = new MongoClient(db_uri);
-    await db_call.connect;
+    const post = await getPost(slug);
 
-    if (!ObjectId.isValid(slug)) notFound();
-    const post = await db_call
-        .db("blog")
-        .collection("post")
-        .findOne({ _id: new ObjectId(slug) });
-
-    if (!post || post.status !== "published") {
+    if (!post) {
         return {
             title: "Blog Not Found",
             description: "The requested blog post could not be found.",
@@ -34,21 +20,11 @@ export async function generateMetadata({ params }) {
     };
 }
 
-async function  BlogPost ({ params }) {
-    await connection;  //ensure db connection
+async function BlogPost({ params }) {
     const { slug } = await params;
-    
-    const db_call = new MongoClient(db_uri);
-    await db_call.connect;
-    
-    if (!ObjectId.isValid(slug)) notFound();
-    
-    const post = await db_call
-        .db("blog")
-        .collection("post")
-        .findOne({ _id: new ObjectId(slug) });
-        if (!post || post.status !== "published") notFound();
-    
+    const post = await getPost(slug);
+    if (!post) notFound();
+
     return (
         <article className="mx-auto w-full max-w-3xl px-6 py-10 bg-slate-100/10">
             <img
@@ -61,7 +37,7 @@ async function  BlogPost ({ params }) {
             </p>
             <h1 className="mt-2 text-4xl font-bold">{post.title}</h1>
             <p className="mt-4 text-sm text-muted-foreground">
-                By {post.author.name} on{" "}
+                By {post.author?.name ?? "Unknown"} on{" "}
                 {new Date(post.createdAt).toLocaleDateString("en-US", {
                     dateStyle: "long",
                 })}
@@ -72,7 +48,7 @@ async function  BlogPost ({ params }) {
             </div>
 
             <ul className="mt-10 flex flex-wrap gap-2">
-                {post.tags.map((tag) => (
+                {post.tags?.map((tag) => (
                     <li
                         key={tag}
                         className="rounded-full border px-3 py-1 text-xs text-muted-foreground"
@@ -85,12 +61,10 @@ async function  BlogPost ({ params }) {
     );
 };
 
-const Blog = ({ params })=>{
-    return(
-        <div>
+export default function Blog({ params }) {
+    return (
+        <Suspense fallback={<p className="p-10">Loading…</p>}>
             <BlogPost params={params} />
-        </div>
+        </Suspense>
     );
 };
-
-export default Blog;
