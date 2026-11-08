@@ -1,20 +1,14 @@
-export const instant = false;
-import { MongoClient } from "mongodb";
+import { Suspense } from "react";
+import client from "@/lib/mongodb";
 import ArticleCard from "@/components/ArticleCard";
 
-const db_uri = process.env.MONGODB_URI;
-if(!db_uri){
-    throw new error("MongoDb uri is not define int the environment variables");
-}
-
-const db_call = new MongoClient(db_uri);
-
 async function ArticleList() {
-    const articles = await db_call
+    const articles = await client
         .db("blog")
         .collection("post")
         .find({ })
         .sort({ createdAt:-1 })
+        .limit(6)
         .toArray();
 
     return (
@@ -52,9 +46,9 @@ async function ArticleList() {
 
 const Article = () => {
     return (
-        <div>
+        <Suspense>
             <ArticleList />
-        </div>
+        </Suspense>
     );
 };
 
