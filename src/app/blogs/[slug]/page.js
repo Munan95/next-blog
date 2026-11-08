@@ -1,5 +1,4 @@
 export const instant = false;
-// /blogs/[slug]: one post's full article, addressed by its title slug.
 import { MongoClient, ObjectId } from "mongodb";
 import { connection } from "next/server";
 import { notFound } from "next/navigation";
@@ -9,10 +8,6 @@ const db_uri = process.env.MONGODB_URI;
 if(!db_uri){
     throw new error("MongoDb uri is not define int the environment variables");
 }
-
-// export function generateStaticParams() {
-//     return getPosts().map((post) => ({ slug: post.slug }));
-// }
 
 // Generate metadata dynamically for each blog post
 export async function generateMetadata({ params }) {
@@ -42,17 +37,17 @@ export async function generateMetadata({ params }) {
 async function  BlogPost ({ params }) {
     await connection;  //ensure db connection
     const { slug } = await params;
-    // const post = getPost(slug);
     
     const db_call = new MongoClient(db_uri);
     await db_call.connect;
     
     if (!ObjectId.isValid(slug)) notFound();
+    
     const post = await db_call
-    .db("blog")
-    .collection("post")
-    .findOne({ _id: new ObjectId(slug) });
-    if (!post || post.status !== "published") notFound();
+        .db("blog")
+        .collection("post")
+        .findOne({ _id: new ObjectId(slug) });
+        if (!post || post.status !== "published") notFound();
     
     return (
         <article className="mx-auto w-full max-w-3xl px-6 py-10 bg-slate-100/10">
